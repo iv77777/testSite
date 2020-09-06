@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* задаем фон странице */
+.header {
+    overflow: hidden;/* запрещаем прокрутку на всей странице елементам которие виходят за приделы хедера*/
+    position: relative;
+    height: 100vh;
+    background-color: rgb(22, 85, 85);/* Устанавлюваем фон на случай если картинка не загрузилася */
+    background-image: url(../img/bg.jpg);
+    background-size: cover;/* Розтягуем картинку по высоте и по шырене */
+    background-position: center;/* Центрируем картинку по центру окна */
+}
+/* Затемняем фон странице */
+.header-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(4, 51, 53, 0.562);
+}
+
+/* Позыцынируем блок навигации на странице и елементы в нутри него */
+.nav-container {
+    display: flex;
+    justify-content: space-between;/* Устанавливаем елементы в нутри блока по краям */
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1300px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* Условие для экранов с шириной от 0 до 768px */
+@media (max-width: 768px) {
+    /* Уменшаем отступы в "nav-container" для мобильных устройств */
+    .nav-container {
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }    
+}
+
+/* Стилизуем логотип */
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* ============================================= */
+/* Адаптивное меню */
+/* ============================================= */
+/* .nav-wraper {
+
+} */
+
+/* ============ Навигация для десктопа ================== */
+/* стили для блока всех сылок */
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* padding-top: 11px; */
+    display: flex;
+}
+
+/* Условие для экранов с шириной от 0 до 1200px */
+@media (max-width: 1200px) {
+    .nav {
+        display: none;
+    }    
+}
+/* добавляем маржени между сылками Кроме последнього елемента (:not(:last-child)) */
+.nav__item:not(:last-child) {
+    margin-right: 50px;
+}
+/* Стили для всех сылок */
+.nav__link {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+/* При наведении мыши Стили для всех сылок */
+.nav__link:hover {
+    color: #ffd600;
+}
+/* ============ //Навигация для десктопа ================== */
+ 
+/*======== /Кнопка меню гамбургер с анимацией============== */
+/* Создаем область для клика */
+.menu-icon {
+    z-index: 19;
+    position: relative;/* прописываем для того чтобы работал z-index */
+    /* background-color: red; */
+    display: none;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+}
+
+/* Условие для экранов с шириной от 0 до 1200px */
+@media (max-width: 1200px) {
+    .menu-icon {
+        /* display: block; */
+        display: flex;/* Чтобы выравнять елемент по центру используем модель Flexbox */
+        justify-content: center;/* Выравнюваем контент по центру по главной оси (по горозонтали)*/
+        align-items: center;/* Выравнюваем контент по центру (вертыкали)*/
+    }    
+}
+
+/* Создаем белою полоску (Центральну) */
+.menu-icon-line {
+	position: relative;
+	width: 30px;
+	height: 5px;
+	background-color: #ffffff;
+}
+
+/* Создаем белою полоску (Верхню)*/
+.menu-icon-line::before {
+	position: absolute;
+	left: 0;
+	top: -10px;
+	content: '';
+	display: block;
+	width: 30px;
+	height: 5px;
+	background-color: #ffffff;
+	transition: transform 0.2s ease-in, top 0.2s linear 0.2s;/* плавный переход из 45% в бургер*/
+
+}
+
+/* Создаем белою полоску (Нижнею)*/
+.menu-icon-line::after {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	content: '';
+	display: block;
+	width: 30px;
+	height: 5px;
+	background-color: #ffffff;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;/* плавный переход из 45% в бургер*/
+}
+
+/*центральной полоске устанавливаем прозрачнный фон*/
+.menu-icon.menu-icon-activ .menu-icon-line {
+	background-color: transparent;
+}
+
+/* поварачуваеи верхнюю полоску на 45% */
+.menu-icon.menu-icon-activ .menu-icon-line::before {
+	transform: rotate(45deg);
+	top: 0;
+	transition: top 0.2s linear, transform 0.2s ease-in 0.2s;/* плавный переход под 45% */
+}
+
+/* поварачуваеи нижнию полоску на -45% */
+.menu-icon.menu-icon-activ .menu-icon-line::after {
+	transform: rotate(-45deg);
+	top: 0;
+	transition: top 0.2s linear, transform 0.2s ease-in 0.2s;/* плавный переход под 45% */
+}
+/*=== /Кнопка меню гамбургер с анимацией============== */
+
+
+/* ============ Мобильная навигация ================== */
+.mobile-nav {
+    z-index: 9;
+    display: block;
+    position: absolute;
+    right: -350px;/* будем миняти через js на right: 0px; */
+    top: 0;
+    height: 100%;
+    width: 350px;
+    padding: 50px;
+    background-color: rgba(11, 97, 97, 0.747);
+    transition: transform 0.3s ease-in;
+    overflow: auto;/* при необходимости добавляются Полосы прокрутки.*/
+}
+
+/* Условие для экранов с шириной от 0 до 768px */
+@media (max-width: 768px) {
+    .mobile-nav {
+        width: 320px;
+        right: -320px;
+        padding: 40px;
+    }   
+}
+
+.mobile-nav--activ {
+    transform: translateX(-100%);
+}
+.mobile-nav__title{
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #f6d142;
+}
+.mobile-nav__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.mobile-nav__item {
+    margin-bottom: 30px;
+}
+.mobile-nav__link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 22px;
+}
+.mobile-nav__link:hover {
+    color: #ffd600;
+}
+/* ============ //Мобильная навигация ================== */
+
+
+
+/* ============================================= */
+/* /Адаптивное меню */
+/* ============================================= */
