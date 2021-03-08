@@ -347,7 +347,8 @@ body{
     width: 270px;
     min-height: 300px;
     text-align: center;
-    margin-right: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 .reviews__item-name{
     font-family: 'Fira Sans', sans-serif;
