@@ -126,6 +126,8 @@ body._lock {
 
 [class*=-ibg] {
   position: relative;
+  padding-bottom: 100%;
+  background: url("../img/loader/loader.gif") center/50px no-repeat;
 }
 
 [class*=-ibg] img {
@@ -331,7 +333,7 @@ body._lock {
 }
 
 .dropdown__title {
-  margin-right: 0.9375rem;
+  margin-right: 0.625rem;
   font-weight: 700;
 }
 
@@ -342,15 +344,27 @@ body._lock {
 }
 
 .dropdown__item {
-  margin-right: 0.5rem;
+  position: relative;
+  margin-right: 0.3125rem;
   padding: 0 0.4375rem;
   cursor: pointer;
+  border: solid 1px transparent;
   white-space: nowrap;
 }
 
 .dropdown__item_active {
-  background-color: red;
-  color: #fff;
+  border: solid 1px red;
+}
+
+.dropdown__item_active sup {
+  color: transparent;
+}
+
+.dropdown__item_active::before {
+  content: "✖";
+  position: absolute;
+  top: 0.1875rem;
+  right: 0.1875rem;
 }
 
 .dropdown__sort-label {
@@ -419,8 +433,8 @@ body._lock {
 .catalog__cards {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.875rem;
   font-size: 1.0625rem;
 }
 
