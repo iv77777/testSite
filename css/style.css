@@ -79,7 +79,7 @@ html {
 }
 
 body {
-  font-family: "PT Sans Narrow", sans-serif;
+  font-family: "PTSansNarrow", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: #000;
@@ -232,7 +232,7 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.9375rem;
-  min-height: 45px;
+  min-height: 50px;
 }
 
 .header__logo {
@@ -327,6 +327,7 @@ body._lock {
           align-items: center;
   padding: 0.625rem 0;
   overflow-x: auto;
+  margin-bottom: 0.625rem;
 }
 
 .dropdown__title {
@@ -358,7 +359,7 @@ body._lock {
 }
 
 .dropdown__sort-label:not(:last-child) {
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.9375rem;
 }
 
 .dropdown__btn {
@@ -369,7 +370,6 @@ body._lock {
 }
 
 .breadcrumbs {
-  padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
 
@@ -414,6 +414,30 @@ body._lock {
 
 .breadcrumbs__btn {
   padding: 0.1875rem 1.25rem 0.1875rem 0.1875rem;
+}
+
+.catalog__cards {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+  font-size: 1.0625rem;
+}
+
+.footer {
+  background-color: #000;
+}
+
+.footer__inner {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #fff;
+  text-align: center;
+}
+
+.page__title {
+  font-size: 1.5625rem;
+  padding: 0.625rem 0;
 }
 
 .align-self-start {
