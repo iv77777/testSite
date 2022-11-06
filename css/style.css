@@ -253,10 +253,6 @@ body._lock {
   padding: 5px;
 }
 
-.input-checkbox label:hover {
-  color: #db1010;
-}
-
 .input-checkbox label svg {
   opacity: 0;
   -webkit-transition: opacity 0.1s;
@@ -414,6 +410,17 @@ body._lock {
   transition: background-color 0.3s;
 }
 
+.filter__loader {
+  display: none;
+  position: absolute;
+  width: 100px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .filter--active .filter {
   background-color: rgba(0, 0, 0, 0.7098039216);
   pointer-events: auto;
@@ -492,6 +499,8 @@ body._lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 0px -17px 24px 11px rgba(255, 255, 255, 0.93);
+          box-shadow: 0px -17px 24px 11px rgba(255, 255, 255, 0.93);
 }
 
 .filter__sort {
@@ -775,9 +784,14 @@ body._lock {
     color: #db1010;
   }
 
+  .filter__bottom {
+    padding-top: 0.3125rem;
+  }
+
   .filter__sort {
     -ms-flex-item-align: start;
         align-self: flex-start;
+    margin-bottom: 1.25rem;
   }
 
   .filter__sort-label {
@@ -858,6 +872,10 @@ body._lock {
 @media (any-hover: hover) {
   a:hover {
     text-decoration: underline;
+  }
+
+  .input-checkbox label:hover {
+    color: #db1010;
   }
 
   .breadcrumbs__item:hover {
