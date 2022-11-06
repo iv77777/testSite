@@ -73,6 +73,21 @@ img {
 
 /*------------- //reset -------------------------------------*/
 
+.disableTextSelection {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+               not supported by any browser */
+}
+
 html {
   height: 100%;
   overflow-x: hidden;
@@ -213,6 +228,54 @@ body._lock {
 
 .icon-menu {
   display: none;
+}
+
+.input-checkbox {
+  position: relative;
+}
+
+.input-checkbox input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.input-checkbox label {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.input-checkbox label:hover {
+  color: #db1010;
+}
+
+.input-checkbox label svg {
+  opacity: 0;
+  -webkit-transition: opacity 0.1s;
+  -o-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+}
+
+.input-checkbox label {
+  -webkit-transition: color 0.1s;
+  -o-transition: color 0.1s;
+  transition: color 0.1s;
+}
+
+.input-checkbox input:checked ~ label svg {
+  opacity: 1;
+}
+
+.input-checkbox input:checked ~ label {
+  color: red;
 }
 
 .header {
@@ -377,16 +440,15 @@ body._lock {
 
 .filter__category {
   margin-bottom: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.625rem;
 }
 
-.filter__category-btn {
+.filter__category-item {
+  text-transform: uppercase;
   font-weight: 700;
-  margin-right: 1.25rem;
-  padding: 0.3125rem 0.625rem;
-}
-
-.filter__category-btn_active {
-  color: red;
 }
 
 .filter__submenu {
@@ -404,31 +466,13 @@ body._lock {
 .filter__title {
   font-weight: 700;
   text-transform: uppercase;
-  padding: 0.3125rem 0.125rem;
+  padding: 0.3125rem 0.125rem 0.3125rem 1.4375rem;
   margin-bottom: 0.3125rem;
   text-align: start;
   -webkit-transition: color 0.2s, background-color 0.2s;
   -o-transition: color 0.2s, background-color 0.2s;
   transition: color 0.2s, background-color 0.2s;
   cursor: default;
-}
-
-.filter__item {
-  padding: 0.1875rem;
-  cursor: pointer;
-}
-
-.filter__item sup {
-  font-size: 0.8125rem;
-  padding-left: 3px;
-}
-
-.filter__item:not(:last-child) {
-  margin-bottom: 0.3125rem;
-}
-
-.filter__item_active {
-  color: red;
 }
 
 .filter__sort {
@@ -452,6 +496,7 @@ body._lock {
 .filter__sort-btn {
   background-color: red;
   color: #fff;
+  min-width: 12.5rem;
   padding: 0.625rem 1.25rem;
 }
 
@@ -548,6 +593,10 @@ body._lock {
   padding-bottom: 0.75rem;
   color: #fff;
   text-align: center;
+}
+
+.mb-10 {
+  margin-bottom: 0.625rem;
 }
 
 .page__title {
@@ -686,10 +735,6 @@ body._lock {
     display: block;
   }
 
-  .filter__category-btn {
-    margin-right: 0;
-  }
-
   .filter__submenu {
     display: block;
   }
@@ -699,6 +744,7 @@ body._lock {
   }
 
   .filter__title {
+    padding-left: 0;
     display: block;
     width: 100%;
     padding-right: 2.1875rem;
@@ -708,12 +754,6 @@ body._lock {
   .filter__title._active {
     background-color: #f4eded;
     color: #db1010;
-  }
-
-  .filter__list {
-    padding-left: 0.625rem;
-    padding-bottom: 0.625rem;
-    border-bottom: 1px solid #ccc;
   }
 
   .filter__sort-label {
@@ -805,21 +845,13 @@ body._lock {
     color: #bcbcbc;
   }
 
-  .filter__category-btn:hover {
-    color: #db1010;
-  }
-
-  .filter__item:hover {
-    color: #db1010;
-  }
-
   .card:hover {
     border: solid 1px #ccc;
   }
 
   .card:hover .card__img img {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.13);
+        -ms-transform: scale(1.13);
+            transform: scale(1.13);
   }
 }
