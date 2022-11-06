@@ -425,7 +425,6 @@ body._lock {
 
 .filter__content {
   padding-top: 4.375rem;
-  padding-bottom: 1.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -473,6 +472,26 @@ body._lock {
   -o-transition: color 0.2s, background-color 0.2s;
   transition: color 0.2s, background-color 0.2s;
   cursor: default;
+}
+
+.filter__bottom {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  border-top: solid 1px #ccc;
+  padding-bottom: 1.5625rem;
+  padding-top: 1.25rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .filter__sort {
@@ -754,6 +773,11 @@ body._lock {
   .filter__title._active {
     background-color: #f4eded;
     color: #db1010;
+  }
+
+  .filter__sort {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 
   .filter__sort-label {
