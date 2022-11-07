@@ -351,6 +351,17 @@ body._lock {
   padding-bottom: 0.625rem;
 }
 
+.breadcrumbs__amount {
+  padding-top: 1.25rem;
+  padding-bottom: 0.625rem;
+  font-size: 1.25rem;
+}
+
+.breadcrumbs__inner {
+  overflow: auto;
+  padding-bottom: 0.625rem;
+}
+
 .breadcrumbs__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -392,6 +403,7 @@ body._lock {
 
 .breadcrumbs__btn {
   padding: 0.1875rem 1.25rem 0.1875rem 0.1875rem;
+  white-space: nowrap;
 }
 
 .filter {
@@ -625,11 +637,6 @@ body._lock {
 
 .mb-10 {
   margin-bottom: 0.625rem;
-}
-
-.page__title {
-  font-size: 1.5625rem;
-  padding: 0.625rem 0;
 }
 
 .fon {
