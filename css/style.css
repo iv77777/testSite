@@ -360,6 +360,11 @@ body._lock {
 .breadcrumbs__inner {
   overflow: auto;
   padding-bottom: 0.625rem;
+  min-height: 3.1875rem;
+}
+
+.breadcrumbs__text {
+  font-size: 1.25rem;
 }
 
 .breadcrumbs__list {
@@ -545,7 +550,6 @@ body._lock {
 /* /ломающая стрелочка отк/зак первого спойлера */
 
 .catalog {
-  padding-top: 1.875rem;
   padding-bottom: 1.875rem;
 }
 
