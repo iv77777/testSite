@@ -243,12 +243,17 @@ body._lock {
 
 .input-checkbox label {
   cursor: pointer;
-  display: inline-block;
+  display: block;
   overflow: hidden;
 }
 
 .input-checkbox label sup {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.zero.input-checkbox label {
+  color: #ccc;
+  pointer-events: none;
 }
 
 .input-checkbox label svg {
@@ -268,8 +273,16 @@ body._lock {
   opacity: 1;
 }
 
+.zero.input-checkbox input:checked ~ label svg {
+  fill: #ccc;
+}
+
 .input-checkbox input:checked ~ label {
   color: red;
+}
+
+.zero.input-checkbox input:checked ~ label {
+  color: #ccc;
 }
 
 .header {
@@ -402,6 +415,12 @@ body._lock {
       -ms-flex-align: center;
           align-items: center;
   pointer-events: none;
+}
+
+.breadcrumbs__item-brand,
+.breadcrumbs__item-gender {
+  border: solid 1px red;
+  color: red;
 }
 
 .breadcrumbs__btn {
@@ -762,9 +781,9 @@ body._lock {
   }
 
   .filter__submenu {
-    -webkit-column-gap: 3.75rem;
-       -moz-column-gap: 3.75rem;
-            column-gap: 3.75rem;
+    -webkit-column-gap: 1.875rem;
+       -moz-column-gap: 1.875rem;
+            column-gap: 1.875rem;
   }
 }
 
@@ -894,6 +913,10 @@ body._lock {
 
   .input-checkbox label:hover {
     color: #db1010;
+  }
+
+  .zero.input-checkbox label:hover {
+    color: #ccc;
   }
 
   .breadcrumbs__item:hover {
