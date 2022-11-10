@@ -232,6 +232,7 @@ body._lock {
 
 .input-checkbox {
   position: relative;
+  min-width: 10.3125rem;
 }
 
 .input-checkbox input {
@@ -417,10 +418,19 @@ body._lock {
   pointer-events: none;
 }
 
-.breadcrumbs__item-brand,
-.breadcrumbs__item-gender {
+.breadcrumbs__item-brand {
   border: solid 1px red;
   color: red;
+}
+
+.breadcrumbs__item-season {
+  border: solid 1px green;
+  color: green;
+}
+
+.breadcrumbs__item-gender {
+  border: solid 1px blue;
+  color: blue;
 }
 
 .breadcrumbs__btn {
@@ -497,6 +507,7 @@ body._lock {
 .filter__category-item {
   text-transform: uppercase;
   font-weight: 700;
+  min-width: 6.875rem;
 }
 
 .filter__category-item sup {
@@ -780,24 +791,18 @@ body._lock {
     display: none;
   }
 
-  .filter__submenu {
-    -webkit-column-gap: 1.875rem;
-       -moz-column-gap: 1.875rem;
-            column-gap: 1.875rem;
-  }
-}
-
-@media (max-width: 29.99875em) {
-  .header__logo {
-    display: none;
-  }
-
   .filter {
     font-size: 1.5625rem;
   }
 
   .filter__content {
     display: block;
+  }
+
+  .filter__submenu {
+    -webkit-column-gap: 1.875rem;
+       -moz-column-gap: 1.875rem;
+            column-gap: 1.875rem;
   }
 
   .filter__submenu {
@@ -892,17 +897,23 @@ body._lock {
   }
 }
 
-@media (any-hover: hover) and (max-width: 29.99875em) {
+@media (any-hover: hover) and (max-width: 47.99875em) {
   .filter__title:hover {
     color: #db1010;
     background-color: #f4eded;
   }
 }
 
-@media (max-width: 29.99875em) and (any-hover: hover) {
+@media (max-width: 47.99875em) and (any-hover: hover) {
   .filter__submenu._init .filter__title:hover::before,
   .filter__submenu._init .filter__title:hover::after {
     background-color: red;
+  }
+}
+
+@media (max-width: 29.99875em) {
+  .header__logo {
+    display: none;
   }
 }
 
