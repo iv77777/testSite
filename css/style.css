@@ -1464,6 +1464,7 @@ button.swiper-pagination-bullet {
 }
 
 .card__img {
+  cursor: pointer;
   overflow: hidden;
   border-bottom: 1px solid #ccc;
   margin-bottom: 0.625rem;
@@ -1478,6 +1479,7 @@ button.swiper-pagination-bullet {
 }
 
 .card__name {
+  cursor: pointer;
   margin-bottom: 0.625rem;
 }
 
@@ -1533,8 +1535,7 @@ button.swiper-pagination-bullet {
 }
 
 .product {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 1.875rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -1543,6 +1544,44 @@ button.swiper-pagination-bullet {
   background-color: #fff;
   z-index: 11;
   overflow: auto;
+}
+
+.product__close {
+  padding-top: 0.625rem;
+  padding-bottom: 1.25rem;
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.product__close-btn {
+  padding: 0.9375rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1411764706);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.product__close-btn svg {
+  fill: rgba(0, 0, 0, 0.5019607843);
+}
+
+.product__top {
+  margin-bottom: 3.125rem;
 }
 
 .product__name {
@@ -1633,6 +1672,11 @@ button.swiper-pagination-bullet {
   margin-bottom: 2.5rem;
 }
 
+.product__sizes-no {
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
 .product__sizes-title {
   margin-bottom: 0.3125rem;
 }
@@ -1682,6 +1726,10 @@ button.swiper-pagination-bullet {
   background-color: #000;
 }
 
+.product__info {
+  padding-bottom: 1.875rem;
+}
+
 .images-product {
   margin-bottom: 3.125rem;
   position: relative;
@@ -1696,9 +1744,23 @@ button.swiper-pagination-bullet {
   z-index: 2;
 }
 
-.images-product__slide {
-  border: solid 1px transparent;
-  margin-bottom: 1.25rem;
+.images-product__stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  color: #fff;
+}
+
+.images-product__gender {
+  background-color: #000;
+  padding: 0 0.3125rem;
+  margin-bottom: 0.3125rem;
+}
+
+.images-product__low-price {
+  background-color: red;
+  text-align: center;
 }
 
 .images-product__swiper-img {
@@ -1717,6 +1779,26 @@ button.swiper-pagination-bullet {
 
 .thumbs-images__slide.swiper-slide-thumb-active {
   border: solid 1px #000;
+}
+
+.product-info__navigation {
+  border-bottom: solid 1px #ccc;
+}
+
+.product-info__title {
+  font-weight: 700;
+  padding: 0.625rem 0;
+  margin-right: 1.25rem;
+  border-bottom: solid 2px transparent;
+}
+
+.product-info__title._tab-active {
+  color: red;
+  border-color: red;
+}
+
+.product-info__content {
+  padding: 1.25rem 0;
 }
 
 .color-red {
@@ -1756,6 +1838,7 @@ button.swiper-pagination-bullet {
 
   .images-product {
     width: 50%;
+    margin-bottom: 0;
   }
 
   .images-product__slide {
