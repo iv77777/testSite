@@ -1012,8 +1012,8 @@ button.swiper-pagination-bullet {
   position: absolute;
   top: 0;
   left: 0;
-  max-width: none;
-  max-height: none;
+  max-width: 250%;
+  max-height: 250%;
 }
 
 .search {
@@ -1535,6 +1535,7 @@ button.swiper-pagination-bullet {
 }
 
 .product {
+  padding-top: 4.375rem;
   padding-bottom: 1.875rem;
   position: fixed;
   top: 0;
@@ -1546,22 +1547,11 @@ button.swiper-pagination-bullet {
   overflow: auto;
 }
 
-.product__close {
-  padding-top: 0.625rem;
-  padding-bottom: 1.25rem;
-  position: sticky;
-  top: 0;
-  right: 0;
-  z-index: 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
 .product__close-btn {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  z-index: 10;
   padding: 0.9375rem;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.1411764706);
@@ -1763,13 +1753,25 @@ button.swiper-pagination-bullet {
   text-align: center;
 }
 
-.images-product__swiper-img {
+.images-product__swiper-imges {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 100%;
+  background: url("../img/loader/loader.gif") center/50px no-repeat;
+}
+
+.images-product__swiper-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .thumbs-images__slide {
@@ -1779,6 +1781,11 @@ button.swiper-pagination-bullet {
 
 .thumbs-images__slide.swiper-slide-thumb-active {
   border: solid 1px #000;
+}
+
+.thumbs-images__slide-ibg {
+  padding-bottom: calc((100% - 40px) / 5);
+  background-size: 50%;
 }
 
 .product-info__navigation {
@@ -1854,6 +1861,18 @@ button.swiper-pagination-bullet {
     position: absolute;
     left: 0;
     top: 0;
+  }
+}
+
+@media (min-width: 1360px) {
+  .product__close-btn {
+    right: calc(50% - 665px);
+  }
+}
+
+@media (max-width: 61.99875em) {
+  .images-product__slide {
+    margin-bottom: 5px;
   }
 }
 
