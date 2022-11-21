@@ -1028,14 +1028,17 @@ button.swiper-pagination-bullet {
   height: 100%;
   background-color: #fff;
   z-index: 10;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
 }
 
 .zoomImg.enlargePictureImg {
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
   opacity: 1;
   position: static;
   margin: 0 auto;
-  cursor: -webkit-zoom-out;
-  cursor: zoom-out;
+  max-height: 100vh;
 }
 
 .search {
