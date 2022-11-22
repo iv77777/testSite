@@ -1030,6 +1030,7 @@ button.swiper-pagination-bullet {
   z-index: 10;
   cursor: -webkit-zoom-out;
   cursor: zoom-out;
+  padding-top: 100px;
 }
 
 .zoomImg.enlargePictureImg {
@@ -1038,7 +1039,7 @@ button.swiper-pagination-bullet {
   opacity: 1;
   position: static;
   margin: 0 auto;
-  max-height: 100vh;
+  max-width: 100%;
 }
 
 .search {
@@ -1861,10 +1862,6 @@ button.swiper-pagination-bullet {
 }
 
 @media (min-width: 61.99875em) {
-  .zoomImg.enlargePictureImg {
-    max-width: 100%;
-  }
-
   .product__top {
     display: -webkit-box;
     display: -ms-flexbox;
